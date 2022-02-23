@@ -11,7 +11,9 @@ http.createServer(function (req, res) {
         var cookies = cookie.parse(req.headers.cookie || '');
         var jumpTo = switchService.switchJumpTo(cookies.jumpTo);
         if(jumpTo === null) {
-            res.end("Oops! No proxy matched.");
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write("Oops! No proxy matched. Please go to <a href='/switch'>switch panel</a>.");
+            res.end();
         }else{
             proxy.web(req, res, {
                 target: jumpTo
