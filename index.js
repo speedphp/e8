@@ -1,9 +1,9 @@
 var http = require('http'), httpProxy = require('http-proxy');
 var cookie = require('cookie');
-var proxy = httpProxy.createProxyServer();
+var proxy = httpProxy.createProxyServer({changeOrigin:true});
 var switchService = require("./switch.js");
 
-http.createServer(function (req, res) {
+var proxyServer = http.createServer(function (req, res) {
     var match = switchService.matchSwitch(req.url);
     if(match){
         switchService.displaySwitch(req.url, res);
@@ -20,6 +20,8 @@ http.createServer(function (req, res) {
             });
         }
     }
-}).listen(switchService.getPort());
-
-
+});
+proxyServer.on('upgrade', function (req, socket, head) {
+    proxy.ws(req, socket, head);
+});
+proxyServer.listen(switchService.getPort());
