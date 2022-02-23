@@ -1,0 +1,35 @@
+{
+  "name": "e8",
+  "version": "1.0.2",
+  "description": "Reverse proxy for single host and port by cookie specified.",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm i",
+    "log" : "pm2 log index",
+    "watch" : "pm2 start index.js --watch",
+    "watch_stop" : "pm2 stop index.js --watch",
+    "stub_start" : "pm2 start test.js --watch",
+    "stub_stop" : "pm2 stop test.js --watch",
+    "pm2_start": "pm2 start index.js",
+    "pm2_stop": "pm2 stop index.js",
+    "pm2_restart": "pm2 restart index.js",
+    "pm2_clear": "pm2 delete all"
+  },
+  "keywords": [
+    "cookie",
+    "proxy"
+  ],
+  "homepage": "https://github.com/speedphp/e8#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/speedphp/e8.git"
+  },
+  "author": "speedphp",
+  "license": "MIT",
+  "dependencies": {
+    "http-proxy": "1.18.1",
+    "cookie": "0.4.2",
+    "ini": "2.0.0",
+    "mustache":"4.2.0"
+  }
+}
