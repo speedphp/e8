@@ -1,6 +1,6 @@
 {
   "name": "e8",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Reverse proxy for single host and port by cookie specified.",
   "main": "index.js",
   "scripts": {
