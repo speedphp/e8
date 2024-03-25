@@ -105,3 +105,4 @@ dist
 /.idea/
 /node_modules/
 /cookie_proxy.iml
+package-lock.json

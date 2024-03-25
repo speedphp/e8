@@ -1,0 +1,17 @@
+{
+  "client":{
+    "22" : "128.0.0.1:6000"
+  },
+  "server":{
+    "6000" : "7000"
+  },
+  "cookie": {
+    "path": "/switch",
+    "port": 9008,
+    "mapper": {
+      "xx": "http://localhost:9001",
+      "yy": "http://localhost:9002",
+      "zz": "http://localhost:9003"
+    }
+  }
+}
