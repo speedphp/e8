@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 const commander = require('commander');
 const program = new commander.Command();
-const cookieWeb = require("./cookie")
+const cookieWeb = require("./lib/cookie")
+const clientCross = require("./lib/client")
+const serverCross = require("./lib/server")
 const package = require("./package.json")
 
 program
@@ -18,7 +20,7 @@ program
     if(config === undefined || config == {}) {
       config = process.cwd() + "/config.json"
     }
-    //cookieWeb(configPath)
+    serverCross(config)
   })
 program
   .command('client')
@@ -28,7 +30,7 @@ program
     if(config === undefined || config == {}) {
       config = process.cwd() + "/config.json"
     }
-    //cookieWeb(configPath)
+    clientCross(config)
   })
 program
   .command('cookie')
