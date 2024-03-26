@@ -1,7 +1,7 @@
 {
   "name": "e8",
-  "version": "1.0.5",
-  "description": "Reverse proxy for single host and port by cookie specified.",
+  "version": "2.0.0",
+  "description": "With SSH connected to the intranet, the same Web port can access sites with multiple ports.",
   "main": "index.js",
   "bin": {
     "e8": "./index.js"
